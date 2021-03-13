@@ -1,5 +1,5 @@
 # telegram_handler
-Logging handler that sends log messages directly either a telegram channel or chat  
+Logging handler that sends log messages directly to either a telegram channel or chat  
 
 ## Motivation
 Tracking program execution state remotely - directly from your telegram account
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     main()
 ```
 
-You can add the handler to the root logger as well:
+Another option is to add the handler to the root logger:
 ```python
 import logging
 
@@ -76,13 +76,14 @@ In order to use the package you should:
 ### There are 2 possibilities:
 - Use `AsyncTelegramHandler` and send messages from a different thread (__recommended__)
 - Use `BlockingTelegramHandler` and send messages from the same thread.  
-  :warning: sometimes the logger should wait for a cooldown (telegram constrains),
+  :warning: __warning__: sometimes the logger should wait for a cooldown (telegram constrains),
   using this handler will block the entire program
   
 ### Parameters:
-- `bot_token` - The token that returns from the bot father when creating the bot.  
+- `bot_token` - The token that returns from the `BotFather` when creating the bot.  
 ![bot_token](bot%20token.png)
-- `channel_name` - Each chat in Telegram have `chat id`, channel name is the chat id for public channels.
-  - For the __public channel__ `example_channel_logger` the `chat id` is `example_channel_logger`
+- `channel_name` - Each chat in Telegram have `chat id`. 
+  - Channel name is the `chat id` for public channels. 
+    So for the __public channel__ `example_channel_logger` the `chat id` will be `example_channel_logger`
   - The `channel_name` can be any `chat id`, you can see how to obtain chat id 
     [here](http://techblog.sillifish.co.uk/2020/03/30/telegram-chat-id-and-token-id/).
