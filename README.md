@@ -33,7 +33,7 @@ if __name__ == '__main__':
     main()
 ```
 
-You can add the handler to the root logger as well:
+Another option is to add the handler to the root logger:
 ```python
 import logging
 
