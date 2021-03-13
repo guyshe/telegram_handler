@@ -80,7 +80,7 @@ In order to use the package you should:
   using this handler will block the entire program
   
 ### Parameters:
-- `bot_token` - The token that returns from the bot father when creating the bot.  
+- `bot_token` - The token that returns from the `BotFather` when creating the bot.  
 ![bot_token](bot%20token.png)
 - `channel_name` - Each chat in Telegram have `chat id`, channel name is the chat id for public channels.
   - For the __public channel__ `example_channel_logger` the `chat id` is `example_channel_logger`
