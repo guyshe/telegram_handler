@@ -1,5 +1,5 @@
 # telegram_handler
-Logging handler that sends log messages directly either a telegram channel or chat  
+Logging handler that sends log messages directly to either a telegram channel or chat  
 
 ## Motivation
 Tracking program execution state remotely - directly from your telegram account
