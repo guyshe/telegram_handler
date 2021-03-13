@@ -76,7 +76,7 @@ In order to use the package you should:
 ### There are 2 possibilities:
 - Use `AsyncTelegramHandler` and send messages from a different thread (__recommended__)
 - Use `BlockingTelegramHandler` and send messages from the same thread.  
-  :warning: sometimes the logger should wait for a cooldown (telegram constrains),
+  :warning: __warning__: sometimes the logger should wait for a cooldown (telegram constrains),
   using this handler will block the entire program
   
 ### Parameters:
