@@ -2,8 +2,8 @@ import logging
 
 from telegram_handler import AsyncTelegramHandler
 
-BOT_TOKEN = '1687808712:AAGcV2SxriHSCBg1zYC3STiyIuFBTO7xYfQ'
-CHANNEL_NAME = 'guysheloggerchannel'
+BOT_TOKEN = '<bot-token>'
+CHANNEL_NAME = '<channel-name>'
 
 
 def main():
