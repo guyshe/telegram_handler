@@ -83,7 +83,7 @@ In order to use the package you should:
 - `bot_token` - The token that returns from the `BotFather` when creating the bot.  
 ![bot_token](bot%20token.png)
 - `channel_name` - Each chat in Telegram have `chat id`. 
-  - channel name is the `chat id` for public channels. 
+  - Channel name is the `chat id` for public channels. 
     So for the __public channel__ `example_channel_logger` the `chat id` will be `example_channel_logger`
   - The `channel_name` can be any `chat id`, you can see how to obtain chat id 
     [here](http://techblog.sillifish.co.uk/2020/03/30/telegram-chat-id-and-token-id/).
