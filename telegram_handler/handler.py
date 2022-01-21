@@ -24,15 +24,14 @@ class TelegramLoggingHandler(logging.Handler):
         self._writer_thread = None
         self._start_writer_thread()
 
-    @retry((requests.RequestException),
+    @retry(requests.RequestException,
            tries=MAX_RETRYS,
            delay=RETRY_COOLDOWN_TIME,
            logger=logger)
     def write(self, message):
         url = API_URL.format(bot_token=self.bot_token,
-                             channel_name=self.channel_name,
-                             message=message)
-        requests.get(url).raise_for_status()
+                             channel_name=self.channel_name)
+        requests.post(url, data={'text': message}).raise_for_status()
 
     def emit(self, record: logging.LogRecord) -> None:
         message = self.format(record)
@@ -70,6 +69,8 @@ class TelegramLoggingHandler(logging.Handler):
                 q.task_done()
             except Empty:
                 self._flush_buffer()
+            except Exception:
+                logging.exception('Got exception while handling log')
 
     def _start_writer_thread(self):
         self._writer_thread = Thread(target=self._write_manager)
