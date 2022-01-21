@@ -1,2 +1,1 @@
-from telegram_handler.blocking_telegram_handler import BlockingTelegramHandler
-from telegram_handler.async_telegram_handler import AsyncTelegramHandler
+from telegram_handler.handler import TelegramLoggingHandler
