@@ -1,5 +1,7 @@
 # telegram_handler
-Logging handler that sends log messages directly to either a telegram channel or chat  
+Telegram logging handler for logging library in python.
+
+Telegram log handler sends log messages directly to either a telegram channel or chat for your choice
 
 ## Motivation
 Tracking program execution state remotely - directly from your telegram account
@@ -12,14 +14,14 @@ Basic usage example:
 ```python
 import logging
 
-from telegram_handler import AsyncTelegramHandler
+from telegram_handler import TelegramLoggingHandler
 
 BOT_TOKEN = '1612485124:AAFW9JXxjqY9d-XayMKh8Q4-_iyHkXSw3N8'
 CHANNEL_NAME = 'example_channel_logger'
 
 
 def main():
-    telegram_log_handler = AsyncTelegramHandler(BOT_TOKEN, CHANNEL_NAME)
+    telegram_log_handler = TelegramLoggingHandler(BOT_TOKEN, CHANNEL_NAME)
     my_logger = logging.getLogger('My-Logger')
     my_logger.setLevel(logging.INFO)
     my_logger.addHandler(logging.StreamHandler())
@@ -37,14 +39,14 @@ Another option is to add the handler to the root logger:
 ```python
 import logging
 
-from telegram_handler import AsyncTelegramHandler
+from telegram_handler import TelegramLoggingHandler
 
 BOT_TOKEN = '1612485124:AAFW9JXxjqY9d-XayMKh8Q4-_iyHkXSw3N8'
 CHANNEL_NAME = 'example_channel_logger'
 
 
 def main():
-    telegram_log_handler = AsyncTelegramHandler(BOT_TOKEN, CHANNEL_NAME)
+    telegram_log_handler = TelegramLoggingHandler(BOT_TOKEN, CHANNEL_NAME)
     logging.basicConfig(
         handlers = [
             telegram_log_handler
@@ -73,11 +75,7 @@ In order to use the package you should:
   [here](https://www.logaster.com/blog/how-create-telegram-channel/).
 
 ## How to use?
-### There are 2 possibilities:
-- Use `AsyncTelegramHandler` and send messages from a different thread (__recommended__)
-- Use `BlockingTelegramHandler` and send messages from the same thread.  
-  :warning: __warning__: sometimes the logger should wait for a cooldown (telegram constrains),
-  using this handler will block the entire program
+- Use `TelegramLoggingHandler` and send messages from a different thread (__recommended__)
   
 ### Parameters:
 - `bot_token` - The token that returns from the `BotFather` when creating the bot.  
