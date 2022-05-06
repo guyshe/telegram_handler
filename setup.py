@@ -8,7 +8,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(name='telegram-handler',
-      version='1.4.1',
+      version='1.4.3',
       description='async telegram handler',
       author='Guyshe',
       url='https://github.com/guyshe/telegram_handler',
