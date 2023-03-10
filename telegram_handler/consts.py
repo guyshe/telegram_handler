@@ -6,7 +6,7 @@ API_URL = (f'https://{API_HOST}/bot{{bot_token}}/sendMessage?'
 RETRY_COOLDOWN_TIME = 60
 MAX_RETRYS = 20
 RETRY_BACKOFF_TIME = 5
-# max valid size is 4096, we take margins to be on the safe side
+# max valid size is 4096, we take margin to be on the safe side
 MAX_MESSAGE_SIZE = 4000
 TOO_MANY_REQUESTS = 429
 MAX_BUFFER_SIZE = 10**16
