@@ -7,7 +7,7 @@ Telegram log handler sends log messages directly to either a telegram channel or
 Tracking program execution state remotely - directly from your telegram account
 
 ## Screenshots
-![screenshot](screenshot.png)
+![screenshot](https://github.com/guyshe/telegram_handler/blob/master/screenshot.png?raw=true)
 
 ## Code Examples
 Basic usage example:
@@ -79,7 +79,7 @@ In order to use the package you should:
   
 ### Parameters:
 - `bot_token` - The token that returns from the `BotFather` when creating the bot.  
-![bot_token](bot%20token.png)
+![bot_token](https://github.com/guyshe/telegram_handler/blob/master/bot%20token.png?raw=true)
 - `channel_name` - Each chat in Telegram have `chat id`. 
   - Channel name is the `chat id` for public channels. 
     So for the __public channel__ `example_channel_logger` the `chat id` will be `example_channel_logger`

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=64.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telegram-handler"
+dependencies = [
+  'requests ~= 2.25.0', 
+  'retry ~= 0.9.0'
+]
+
+version = "1.4.4"
+authors = [
+  {name="Guyshe"},
+]
+description = "Small package for working with config files"
+readme = "README.md"
+requires-python = ">=3"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/guyshe/telegram_handler"
