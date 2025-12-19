@@ -5,8 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "telegram-handler"
 dependencies = [
-  'requests ~= 2.25.0', 
-  'retry ~= 0.9.0'
+  "requests>=2.25",
+  "retry>=0.9"
 ]
 
 version = "1.4.4"
