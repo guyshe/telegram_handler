@@ -51,5 +51,5 @@ for i in range(5):
 ![screenshot](https://github.com/guyshe/telegram_handler/blob/master/screenshot.png?raw=true)
 
 ## Development
-- Run tests: `pytest`
+- Run tests: `tox`
 - Lint with ruff: `ruff check`

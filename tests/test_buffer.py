@@ -1,6 +1,6 @@
 from telegram_handler.buffer import MessageBuffer
 
-MSG = 'abcdefghijk' * 2
+MSG = "abcdefghijk" * 2
 MSG_LEN = len(MSG)
 
 

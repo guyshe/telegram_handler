@@ -93,6 +93,10 @@ class TelegramLoggingHandler(logging.Handler):
             raise TelegramConfigurationError(
                 f"Bad Request: {response_data.get('description', 'Could not get description')}"
             )
+        if response.status_code == 404:
+            raise TelegramConfigurationError(
+                "Not Found: The requested resource could not be found, this may happen if the bot token is invalid, or the api has changed"
+            )
         response.raise_for_status()
         if response.status_code == requests.codes.too_many_requests:
             raise requests.exceptions.RequestException("Too many requests")
