@@ -1,12 +1,8 @@
 FLUSH_INTERVAL = 5
 
-API_HOST = "api.telegram.org"
-API_FORMAT_REQUEST = f"https://{API_HOST}/bot{{bot_token}}"
-API_SEND_MESSAGE_REQUEST = (
-    "{api_request}/sendMessage?chat_id={channel_name}&parse_mode=HTML"
-)
-API_VALIDATE_TOKEN_REQUEST = "{api_request}/getMe"
-API_VALIDATE_CHAT_REQUEST = "{api_request}/getChat?chat_id={channel_name}"
+API_HOST = 'api.telegram.org'
+API_URL = (f'https://{API_HOST}/bot{{bot_token}}/sendMessage?'
+           f'chat_id={{channel_name}}&parse_mode=HTML')
 RETRY_COOLDOWN_TIME = 60
 MAX_RETRYS = 20
 RETRY_BACKOFF_TIME = 5
