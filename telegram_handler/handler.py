@@ -28,7 +28,6 @@ logger = logging.getLogger(__name__)
 class TelegramLoggingHandler(logging.Handler):
     def __init__(self, bot_token: str, channel: Union[str, int], level=logging.NOTSET):
         super().__init__(level)
-        # self._url = TelegramLoggingHandler._format_send_message_url(bot_token, channel)
         self._buffer = MessageBuffer(MAX_BUFFER_SIZE)
         self._stop_signal = RLock()
         self._writer_thread = None
