@@ -1,4 +1,8 @@
 # Telegram Handler
+[![PyPI](https://img.shields.io/pypi/v/telegram-handler.svg)](https://pypi.org/project/telegram-handler/)
+[![Python](https://img.shields.io/pypi/pyversions/telegram-handler.svg)](https://pypi.org/project/telegram-handler/)
+[![License](https://img.shields.io/pypi/l/telegram-handler.svg)](https://pypi.org/project/telegram-handler/)
+
 Drop-in Python `logging.Handler` that forwards log records to a Telegram chat or channel with buffering, retries, and a background worker so your app stays responsive.
 
 ## Highlights
@@ -12,6 +16,11 @@ Drop-in Python `logging.Handler` that forwards log records to a Telegram chat or
 ```bash
 pip install telegram-handler
 ```
+
+## Use cases
+- Alert on errors from small services without standing up extra infrastructure.
+- Send deploy and health logs to a shared team channel.
+- Keep local dev logs visible on your phone during long runs.
 
 ## Quickstart
 ```python
@@ -46,6 +55,11 @@ for i in range(5):
 - Payloads are trimmed to stay under Telegram's message size limits; long bursts are split across flushes.
 - The handler automatically retries with exponential backoff on Telegram's `429 Too Many Requests` responses.
 - Call `handler.close()` during shutdown if you need to stop the background thread cleanly.
+
+## Tips
+- Send only what you need: Telegram has rate limits and message size limits.
+- Keep your `BOT_TOKEN` out of source control; use env vars or a secrets manager.
+- Combine this handler with file/stream handlers for local debugging.
 
 ## Screenshot
 ![screenshot](https://github.com/guyshe/telegram_handler/blob/master/screenshot.png?raw=true)
